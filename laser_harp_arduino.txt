@@ -1,0 +1,19 @@
+const int laser = 13;      // led connected to digital pin 13
+const int laserSensor = A0; // the sensor is connected to analog pin 0
+int sensorValue;
+
+
+void setup() {
+  pinMode(laser, OUTPUT); // declare the laser as OUTPUT
+  Serial.begin(9600);       // use the serial port
+}
+
+void loop(){
+    digitalWrite(laser,HIGH);
+    
+    sensorValue = analogRead(laserSensor);
+    
+    Serial.println(sensorValue);
+    
+    delay(100);
+}
